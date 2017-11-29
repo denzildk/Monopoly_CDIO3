@@ -35,12 +35,11 @@ public class Controller {
 	}
 
 	public void gamecontroler() {
-
 		boundry.showMessage("controller launched");
 		playerInit();
 		// System.out.println(players);
 		game = new SimpleGame();
-		
+
 		runGame(players);
 		keyboard.waitForEnter();
 	}
@@ -50,7 +49,7 @@ public class Controller {
 			boundry.showMessage(String.format(out.getString("playerTurn"), players.getName(players.getActivePlayer())));
 			cup.rollCup();
 			boundry.setDie(cup.getEyes());
-			boundry.movePlayer(players.getActivePlayer(),cup.getEyes());
+			boundry.movePlayer(players.getActivePlayer(), cup.getEyes());
 		} while (players.gameEnd() == false);
 	}
 
@@ -58,9 +57,10 @@ public class Controller {
 		int i = boundry.waitForInt(out.getString("initNrOfPlayers"));
 		players = new PlayerList(i);
 		for (int j = 0; j < i; j++) {
-			boundry.showMessage(out.getString("nameReg"), j + 1);
+			//boundry.showMessage(out.getString("nameReg"), j + 1);
 			players.setName(boundry.waitForString(out.getString("nameReg"), j + 1), j);
 		}
+		boundry.creatPlayers(players.getNames(i),players.getBalances(i));
 	}
 
 }

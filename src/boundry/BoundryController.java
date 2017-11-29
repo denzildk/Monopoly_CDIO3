@@ -38,4 +38,9 @@ public class BoundryController {
 	public void movePlayer(int activePlayer, int eyes) {
 		gui.movePlayer(activePlayer, eyes);
 	}
+
+	public void creatPlayers(String[] names, int[] balances) {
+		gui.creatPlayers(names, balances);
+		
+	}
 }

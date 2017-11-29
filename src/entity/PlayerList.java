@@ -60,4 +60,24 @@ public class PlayerList {
 	public String toString(int i) {
 		return players[i].toString();
 	}
+
+	public String[] getNames(int i) {
+		String[] out = new String[i];
+		for(int j=0; j<i;j++) {
+			out[j] = players[j].getName();
+			
+		}
+			
+		return out;
+	}
+
+	public int[] getBalances(int i) {
+		int[] out = new int[i];
+		for(int j=0; j<i;j++) {
+			out[j] = players[j].getBalance();
+			
+		}
+			
+		return out;
+	}
 }

@@ -3,8 +3,6 @@
  */
 package game_Locig;
 
-import java.util.Scanner;
-
 /**
  * @author Stonecore
  *
@@ -22,10 +20,10 @@ public abstract class AbstractGame {
 	public AbstractGame() {
 
 	}
-	public String getRent(int i) {
-		return rent[i];
+	public String[] getRent() {
+		return rent;
 	}
-	public String GetField(int i) {
-		return fields[i];
+	public String[] GetField() {
+		return fields;
 	}
 }
