@@ -80,6 +80,9 @@ public class PlayerList {
 			
 		return out;
 	}
+	public int getBalance(int i) {
+		return players[i].getBalance();
+	}
 	public void setField(int player, int field) {
 		players[player].setField(field);
 	}

@@ -29,4 +29,5 @@ public abstract class AbstractGame {
 	public int getFieldLength() {
 		return fields.length;
 	}
+	public abstract int getPrices(int field);
 }
