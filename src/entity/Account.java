@@ -1,26 +1,20 @@
 package entity;
 
-/**
- * This class handles the players' account and its balance. This includes:
- * Initinating a balance with a value. (Constructor). Returning the balance
- * (int). Setting the balance to 0, if balance < 0. (void). Adding/Subtracting
- * from the balance (void).
- * 
- * Called from the class "Player".
- */
+	/**
+	 * Provides an account for the entity.Player class that can handle
+	 * getting, checking and adding/subtracting from the account.
+	 */
 
 public class Account {
-
-	/**
-	 * Establises a balance and makes a default value;
-	 */
 
 	int Balance, defaultBalance = 20;
 
 	/**
-	 * Constructor The default value is made into the (Account) Balance. and a the
-	 * method balanceCheck() is run.
-	 * @param i 
+	 * Constructs an account with a balance based on the number of players.
+	 * 
+	 * @param i The number of players.
+	 * @param Balance The starting balance for all players.
+	 * @param defaultBalance A number set to 20 that can be changed if necessary
 	 */
 
 	public Account(int i) {
@@ -29,7 +23,10 @@ public class Account {
 	}
 
 	/**
-	 * Method that returns the current balance.
+	 * Returns the balance as a integer, this method will be expanded in the entity.Player class.
+	 * 
+	 * @param Balance The player's current balance
+	 * @return The current balance
 	 */
 
 	public int getBalance() {
@@ -37,8 +34,7 @@ public class Account {
 	}
 
 	/**
-	 * Method that checks if the balance is under 0. If the balance is under 0, the
-	 * balance is set to 0, due to the requirements of the game.
+	 *
 	 */
 
 	private void balanceCheck() {
@@ -47,13 +43,22 @@ public class Account {
 	}
 
 	/**
-	 * Method that adds a value to the balance to the current balance Afterwards the
-	 * method balanceCheck() is run.
+	 * Sets the balance to something else by adding or subtracting
+	 * 
+	 * @param Balance The amount that needs to be changed from the player's balance.
 	 */
+	
 	public void addBalance(int Balance) {
 		this.Balance += Balance;
 		//balanceCheck();
 	}
+	
+	/**
+	 * Return the balance as a String, with the valuta "M$" at the end
+	 * 
+	 * @param Balance The player's current balance
+	 * @return The balance + "M$" 
+	 */
 
 	public String toString() {
 		return Integer.toString(Balance) + "M$";
