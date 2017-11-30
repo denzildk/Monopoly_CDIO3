@@ -23,7 +23,10 @@ public abstract class AbstractGame {
 	public String[] getRent() {
 		return rent;
 	}
-	public String[] GetField() {
+	public String[] getField() {
 		return fields;
+	}
+	public int getFieldLength() {
+		return fields.length;
 	}
 }

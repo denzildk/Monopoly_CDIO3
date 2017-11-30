@@ -35,12 +35,13 @@ public class BoundryController {
 		gui.setDie(eyes);
 	}
 
-	public void movePlayer(int activePlayer, int eyes) {
-		gui.movePlayer(activePlayer, eyes);
+	public void moveCar(int currentPlayer, int eyes, int[] playerFields) {
+		int oldField = (((playerFields[currentPlayer]-eyes)+24)%24);
+		gui.moveCar(oldField, playerFields);
 	}
 
 	public void creatPlayers(String[] names, int[] balances) {
 		gui.creatPlayers(names, balances);
-		
+
 	}
 }

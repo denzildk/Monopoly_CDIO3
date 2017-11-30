@@ -102,11 +102,12 @@ public class MatadorGUI {
 		gui.setDie(i);
 	}
 
-	public void movePlayer(int activePlayer, int eyes) {
-		fields[activePlayer].removeAllCars();
-		fields[eyes].setCar(player[activePlayer], true);
-		// fields[activePlayer].removeAllCars();
-		;
+	public void moveCar(int oldField, int[] playerFields) {
+		fields[oldField].removeAllCars();
+		for (int i = 0; i < playerFields.length; i++) {
+			fields[playerFields[i]].setCar(player[i], true);
+		}
 	}
+	
 
 }

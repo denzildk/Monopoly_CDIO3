@@ -80,4 +80,20 @@ public class PlayerList {
 			
 		return out;
 	}
+	public void setField(int player, int field) {
+		players[player].setField(field);
+	}
+	public int getField(int player) {
+		return players[player].getField();
+	}
+	public void addToField(int player,int eyes, int fields) {
+		players[player].addToField(eyes, fields);;
+	}
+
+	public int[] getFields() {
+		int[] out = new int[players.length];
+		for(int i=0;i<out.length;i++)
+			out[i] = players[i].getField();
+		return out;
+	}
 }

@@ -49,9 +49,9 @@ public class Controller {
 			boundry.showMessage(String.format(out.getString("playerTurn"), players.getName(players.getActivePlayer())));
 			cup.rollCup();
 			boundry.setDie(cup.getEyes());
-			boundry.movePlayer(players.getActivePlayer(), cup.getEyes());
-			
-			
+			players.addToField(players.getActivePlayer(), cup.getEyes(), game.getFieldLength());
+			boundry.moveCar(players.getActivePlayer(),cup.getEyes(),players.getFields());
+
 			players.passTurn();
 		} while (players.gameEnd() == false);
 	}
@@ -60,10 +60,10 @@ public class Controller {
 		int i = boundry.waitForInt(out.getString("initNrOfPlayers"));
 		players = new PlayerList(i);
 		for (int j = 0; j < i; j++) {
-			//boundry.showMessage(out.getString("nameReg"), j + 1);
 			players.setName(boundry.waitForString(out.getString("nameReg"), j + 1), j);
 		}
-		boundry.creatPlayers(players.getNames(i),players.getBalances(i));
+		boundry.creatPlayers(players.getNames(i), players.getBalances(i));
+
 	}
 
 }
