@@ -50,6 +50,9 @@ public class Controller {
 			cup.rollCup();
 			boundry.setDie(cup.getEyes());
 			boundry.movePlayer(players.getActivePlayer(), cup.getEyes());
+			
+			
+			players.passTurn();
 		} while (players.gameEnd() == false);
 	}
 

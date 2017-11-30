@@ -75,6 +75,7 @@ public class MatadorGUI {
 			car[i].setPrimaryColor(colorList[i]);
 			player[i] = new GUI_Player(name[i], balance[i], car[i]);
 			gui.addPlayer(player[i]);
+			fields[0].setCar(player[i], true);
 		}
 	}
 
@@ -102,9 +103,9 @@ public class MatadorGUI {
 	}
 
 	public void movePlayer(int activePlayer, int eyes) {
+		fields[activePlayer].removeAllCars();
+		fields[eyes].setCar(player[activePlayer], true);
 		// fields[activePlayer].removeAllCars();
-		// fields[player[activePlayer].getBalance() + eyes].setCar(player[activePlayer],
-		// true);
 		;
 	}
 
