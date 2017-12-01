@@ -1,5 +1,12 @@
 import controller.Controller;
 
+/**
+ * Provides the main method nessasary for ruining the program,
+ * as well as starting the game by creating a controller.
+ * 
+ * Should not be imported from any class at any time.
+ */
+
 public class Main {
 
 	public static void main(String[] args) {
