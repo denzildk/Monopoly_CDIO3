@@ -161,9 +161,9 @@ public class PlayerList {
 	 * @return An array of all balances.
 	 */
 
-	public int[] getBalances(int i) {
-		int[] out = new int[i];
-		for(int j=0; j<i;j++) {
+	public int[] getBalances() {
+		int[] out = new int[players.length];
+		for(int j=0; j<players.length;j++) {
 			out[j] = players[j].getBalance();
 		}
 		return out;

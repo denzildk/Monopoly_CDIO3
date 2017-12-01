@@ -30,14 +30,14 @@ public class Controller {
 	/**
 	 * 
 	 */
-	
+
 	public Controller() {
 		keyboard = new Keyboard();
 		out = new Out();
 		cup = new Cup();
 		boundry = new BoundryController();
 	}
-	
+
 	/**
 	 * 
 	 */
@@ -49,9 +49,14 @@ public class Controller {
 		game = new SimpleGame();
 
 		runGame(players);
+		getWinner(players.getBalances());
 		keyboard.waitForEnter();
 	}
-	
+
+	private void getWinner(int[] balances) {
+		boundry.showMessage(String.format("Spiller nr. %s vinder", game.getWinner(balances)));
+	}
+
 	/**
 	 * 
 	 * @param players
@@ -65,11 +70,23 @@ public class Controller {
 			players.addToField(players.getActivePlayer(), cup.getEyes(), game.getFieldLength());
 			boundry.moveCar(players.getActivePlayer(), cup.getEyes(), players.getFields());
 			players.addBalance(players.getActivePlayer(), game.getPrices(players.getField(players.getActivePlayer())));
+			checkRules();
+			addUIBalance(players.getBalances());
 			System.out.println(players.getBalance(players.getActivePlayer()));
 			players.passTurn();
 		} while (players.gameEnd() == false);
 	}
-	
+
+	private void addUIBalance(int[] balances) {
+		boundry.setBalances(balances);
+	}
+
+	private void checkRules() {
+		game.checkRules(players.getActivePlayer(), players.getField(players.getActivePlayer()));
+		int owner = game.getOwner(players.getField(players.getActivePlayer()));
+		players.addBalance(owner, -(game.getPrice(players.getField(players.getActivePlayer()))));
+	}
+
 	/**
 	 * 
 	 */
@@ -80,7 +97,7 @@ public class Controller {
 		for (int j = 0; j < i; j++) {
 			players.setName(boundry.waitForString(out.getString("nameReg"), j + 1), j);
 		}
-		boundry.creatPlayers(players.getNames(i), players.getBalances(i));
+		boundry.creatPlayers(players.getNames(i), players.getBalances());
 
 	}
 

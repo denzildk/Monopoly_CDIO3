@@ -18,7 +18,7 @@ public class MatadorGUI {
 	private GUI_Player[] player;
 	private GUI_Car[] car;
 	final Color[] colorList = { Color.YELLOW, Color.BLUE, Color.GREEN, Color.RED };
-	
+
 	/**
 	 * 
 	 */
@@ -71,6 +71,7 @@ public class MatadorGUI {
 		// player[0] = new GUI_Player("abc", 20, car[0]);
 		// player[1] = new GUI_Player("def", 20, car[1]);
 	}
+
 	/**
 	 * 
 	 * @param name
@@ -85,6 +86,7 @@ public class MatadorGUI {
 			fields[0].setCar(player[i], true);
 		}
 	}
+
 	/**
 	 * 
 	 * @param string
@@ -93,7 +95,7 @@ public class MatadorGUI {
 		gui.showMessage(string);
 
 	}
-	
+
 	/**
 	 * 
 	 * @param msg
@@ -103,7 +105,7 @@ public class MatadorGUI {
 		return gui.getUserInteger(msg, 2, 4);
 
 	}
-	
+
 	/**
 	 * 
 	 * @param msg
@@ -113,7 +115,7 @@ public class MatadorGUI {
 		return gui.getUserString(msg);
 
 	}
-	
+
 	/**
 	 * 
 	 * @param fields
@@ -121,7 +123,7 @@ public class MatadorGUI {
 	public void initBoard(GUI_Field[] fields) {
 		gui.getFields();
 	}
-	
+
 	/**
 	 * 
 	 * @param i
@@ -129,10 +131,11 @@ public class MatadorGUI {
 	public void setDie(int i) {
 		gui.setDie(i);
 	}
-	
+
 	/**
 	 * 
-	 * @param oldField Indexnumber for the old field in the fields[].
+	 * @param oldField
+	 *            Indexnumber for the old field in the fields[].
 	 * @param playerFields
 	 */
 	public void moveCar(int oldField, int[] playerFields) {
@@ -141,9 +144,11 @@ public class MatadorGUI {
 			fields[playerFields[i]].setCar(player[i], true);
 		}
 	}
-	public void buyField() {
-		
+
+	public void setBalances(int[] balances) {
+		for (int i = 0; i < balances.length; i++) {
+			player[i].setBalance(balances[i]);
+		}
 	}
-	
 
 }

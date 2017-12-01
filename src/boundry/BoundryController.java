@@ -85,4 +85,8 @@ public class BoundryController {
 		gui.creatPlayers(names, balances);
 
 	}
+
+	public void setBalances(int[] balances) {
+gui.setBalances(balances);		
+	}
 }

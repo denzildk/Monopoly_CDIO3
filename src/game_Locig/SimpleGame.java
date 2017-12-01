@@ -1,8 +1,8 @@
 package game_Locig;
 
 /**
- * Provides the methods for all prices for all fields,
- * which only include returning a price from a specific field.
+ * Provides the methods for all prices for all fields, which only include
+ * returning a price from a specific field.
  *
  * @See AbstractGame
  */
@@ -15,14 +15,20 @@ public class SimpleGame extends AbstractGame {
 	public SimpleGame() {
 		super();
 	}
-	
+
 	/**
-	 * Returns the price of a single field from the int[] prices, where all prices are stored.
+	 * Returns the price of a single field from the int[] prices, where all prices
+	 * are stored.
 	 * 
-	 * @param field The index number of a field.
+	 * @param field
+	 *            The index number of a field.
 	 * @return The The price of the field.
 	 */
 	public int getPrices(int field) {
 		return prices[field];
 	}
+
+	public int getPrice(int field) {
+		return prices[field];
+	};
 }
