@@ -108,6 +108,9 @@ public class MatadorGUI {
 			fields[playerFields[i]].setCar(player[i], true);
 		}
 	}
+	public void buyField() {
+		
+	}
 	
 
 }

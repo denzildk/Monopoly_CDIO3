@@ -50,8 +50,8 @@ public class Controller {
 			cup.rollCup();
 			boundry.setDie(cup.getEyes());
 			players.addToField(players.getActivePlayer(), cup.getEyes(), game.getFieldLength());
-			boundry.moveCar(players.getActivePlayer(),cup.getEyes(),players.getFields());
-			players.addBalance(players.getActivePlayer(),game.getPrices(players.getField(players.getActivePlayer())));
+			boundry.moveCar(players.getActivePlayer(), cup.getEyes(), players.getFields());
+			players.addBalance(players.getActivePlayer(), game.getPrices(players.getField(players.getActivePlayer())));
 			System.out.println(players.getBalance(players.getActivePlayer()));
 			players.passTurn();
 		} while (players.gameEnd() == false);
