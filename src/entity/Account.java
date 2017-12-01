@@ -34,15 +34,6 @@ public class Account {
 	}
 
 	/**
-	 *
-	 */
-
-	private void balanceCheck() {
-		if (this.Balance < 0)
-			this.Balance = 0;
-	}
-
-	/**
 	 * Sets the balance to something else by adding or subtracting
 	 * 
 	 * @param Balance The amount that needs to be changed from the player's balance.
@@ -50,7 +41,6 @@ public class Account {
 	
 	public void addBalance(int Balance) {
 		this.Balance += Balance;
-		//balanceCheck();
 	}
 	
 	/**

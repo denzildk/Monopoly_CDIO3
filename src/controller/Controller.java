@@ -27,12 +27,20 @@ public class Controller {
 	private Cup cup;
 	private BoundryController boundry;
 
+	/**
+	 * 
+	 */
+	
 	public Controller() {
 		keyboard = new Keyboard();
 		out = new Out();
 		cup = new Cup();
 		boundry = new BoundryController();
 	}
+	
+	/**
+	 * 
+	 */
 
 	public void gamecontroler() {
 		boundry.showMessage("controller launched");
@@ -43,6 +51,11 @@ public class Controller {
 		runGame(players);
 		keyboard.waitForEnter();
 	}
+	
+	/**
+	 * 
+	 * @param players
+	 */
 
 	private void runGame(PlayerList players) {
 		do {
@@ -56,6 +69,10 @@ public class Controller {
 			players.passTurn();
 		} while (players.gameEnd() == false);
 	}
+	
+	/**
+	 * 
+	 */
 
 	private void playerInit() {
 		int i = boundry.waitForInt(out.getString("initNrOfPlayers"));
